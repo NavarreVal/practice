@@ -1,107 +1,3 @@
-Hotjar************************************************************************
-
-package refresh;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-//import org.openqa.selenium.WebElement;
-//import org.openqa.selenium.ie.*;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-public class HJrefresh {
-	public static void main(String[]args) {
-		
-		WebDriver driver;
-		System.setProperty("webdriver.gecko.driver",  "C:\\Selenium\\WebDrivers\\geckodriver.exe");
-		driver =new FirefoxDriver();
-		
-		driver.get("https://insights.hotjar.com/sites/327726/playbacks/list");
-		
-		driver.findElement(By.id("email")).sendKeys("devops@ipartnr.com");
-		driver.findElement(By.id("password")).sendKeys("$X^F34^ye3&A");
-		driver.findElement(By.id("password")).submit();
-		
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException el) {
-			el.printStackTrace();
-		}
-		//WebDriverWait wait = new WebDriverWait(driver, 10);
-		//wait.until(ExpectedConditions.elementToBeClickable(By.id("social")));
-		
-		//next(driver, "https://insights.hotjar.com/sites/327726/playbacks/list");
-		//System.out.println("1/9 Done!");
-		next(driver, "https://insights.hotjar.com/sites/196620/playbacks/list");
-		System.out.println("2/9 Done!");
-		next(driver, "https://insights.hotjar.com/sites/196621/playbacks/list");
-		System.out.println("3/9 Done!");
-		next(driver, "https://insights.hotjar.com/sites/196619/playbacks/list");
-		System.out.println("4/9 Done!");
-		next(driver, "https://insights.hotjar.com/sites/227854/playbacks/list");
-		System.out.println("5/9 Done!");
-		next(driver, "https://insights.hotjar.com/sites/196624/playbacks/list");
-		System.out.println("6/9 Done!");
-		next(driver, "https://insights.hotjar.com/sites/196626/playbacks/list");
-		System.out.println("7/9 Done!");
-		next(driver, "https://insights.hotjar.com/sites/196623/playbacks/list");
-		System.out.println("8/9 Done!");
-		next(driver, "https://insights.hotjar.com/sites/319646/playbacks/list");
-		System.out.println("9/9 Done!");
-		
-		driver.quit();
-		System.out.println("All Done!");
-		
-	}
-	
-	public static void next(WebDriver driver, String url) {
-		
-		if (ExpectedConditions.elementToBeClickable(By.id("record-visitors")) != null){
-			driver.findElement(By.id("record-visitors")).click();
-			WebDriverWait wait1 = new WebDriverWait(driver, 10);
-			wait1.until(ExpectedConditions.elementToBeClickable(By.id("section-review")));
-			
-			driver.findElement(By.id("section-review")).click();
-			WebDriverWait wait4 = new WebDriverWait(driver, 10);
-			wait4.until(ExpectedConditions.elementToBeClickable(By.id("start-recording")));
-			
-			driver.findElement(By.id("start-recording")).click();
-			
-		} else if (ExpectedConditions.elementToBeClickable(By.id("stop-recording")) != null){
-			driver.findElement(By.id("stop-recording")).click();
-			WebDriverWait wait1 = new WebDriverWait(driver, 10);
-			wait1.until(ExpectedConditions.elementToBeClickable(By.id("section-review")));
-			
-			driver.findElement(By.id("section-review")).click();
-			WebDriverWait wait4 = new WebDriverWait(driver, 10);
-			wait4.until(ExpectedConditions.elementToBeClickable(By.id("start-recording")));
-			
-			driver.findElement(By.id("start-recording")).click();
-			
-		}
-		
-		driver.get(url);
-		
-//		driver.findElement(By.id("record-visitors")).click();
-//		WebDriverWait wait1 = new WebDriverWait(driver, 10);
-//		wait1.until(ExpectedConditions.elementToBeClickable(By.id("section-review")));
-//		
-//		driver.findElement(By.id("section-review")).click();
-//		WebDriverWait wait4 = new WebDriverWait(driver, 10);
-//		wait4.until(ExpectedConditions.elementToBeClickable(By.id("start-recording")));
-//		
-//		driver.findElement(By.id("start-recording")).click();
-//		
-//		driver.get(url);
-	}
-
-}
-
-
-
-Skinvtech************************************************************************
-
 package sitePackage;
 
 import java.util.ArrayList;
@@ -115,7 +11,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class Skinvtechnologies {
+public class siteCheck {
 	public static void main(String[] args) {
         
         String url = "";
@@ -125,10 +21,12 @@ public class Skinvtechnologies {
         Map<String, List<String>> map = new HashMap<String, List<String>>();
         
         	List<String> skinOffers = new ArrayList<String>();
-        	skinOffers.add("aao-s-i");skinOffers.add("aao-e-i");skinOffers.add("aff-s-i");skinOffers.add("aff-e-i");skinOffers.add("lim-s-i");skinOffers.add("lim-e-i");skinOffers.add("aff-s-j");skinOffers.add("aff-e-j");skinOffers.add("lim-s-j");skinOffers.add("lim-e-j");
-        	//skinOffers.add("oas-s-i");skinOffers.add("seo-s-i");skinOffers.add("sma-s-i");skinOffers.add("aff-s-j");skinOffers.add("lim-s-j");skinOffers.add("oas-s-j");skinOffers.add("aao-e-i");skinOffers.add("aff-e-i");skinOffers.add("lim-e-i");
-        	//skinOffers.add("oas-e-i");skinOffers.add("seo-e-i");skinOffers.add("sma-e-i");skinOffers.add("aff-e-j");skinOffers.add("lim-e-j");skinOffers.add("oas-e-j");
-            
+        	/*aao*/skinOffers.add("aao-s-i");skinOffers.add("aao-e-i");
+        	
+        	/*aff*/ skinOffers.add("aff-s-i");skinOffers.add("aff-e-i");skinOffers.add("aff-s-j");skinOffers.add("aff-e-j");
+
+        	/*lim*/ skinOffers.add("lim-s-i");skinOffers.add("lim-e-i");skinOffers.add("lim-s-j");skinOffers.add("lim-e-j");
+
         	//List<String> garciniaOffers = new ArrayList<String>();
         	//garciniaOffers.add("om");garciniaOffers.add("oma");
         
