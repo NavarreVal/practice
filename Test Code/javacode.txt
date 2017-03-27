@@ -1,0 +1,282 @@
+Hotjar************************************************************************
+
+package refresh;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+//import org.openqa.selenium.WebElement;
+//import org.openqa.selenium.ie.*;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class HJrefresh {
+	public static void main(String[]args) {
+		
+		WebDriver driver;
+		System.setProperty("webdriver.gecko.driver",  "C:\\Selenium\\WebDrivers\\geckodriver.exe");
+		driver =new FirefoxDriver();
+		
+		driver.get("https://insights.hotjar.com/sites/327726/playbacks/list");
+		
+		driver.findElement(By.id("email")).sendKeys("devops@ipartnr.com");
+		driver.findElement(By.id("password")).sendKeys("$X^F34^ye3&A");
+		driver.findElement(By.id("password")).submit();
+		
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException el) {
+			el.printStackTrace();
+		}
+		//WebDriverWait wait = new WebDriverWait(driver, 10);
+		//wait.until(ExpectedConditions.elementToBeClickable(By.id("social")));
+		
+		//next(driver, "https://insights.hotjar.com/sites/327726/playbacks/list");
+		//System.out.println("1/9 Done!");
+		next(driver, "https://insights.hotjar.com/sites/196620/playbacks/list");
+		System.out.println("2/9 Done!");
+		next(driver, "https://insights.hotjar.com/sites/196621/playbacks/list");
+		System.out.println("3/9 Done!");
+		next(driver, "https://insights.hotjar.com/sites/196619/playbacks/list");
+		System.out.println("4/9 Done!");
+		next(driver, "https://insights.hotjar.com/sites/227854/playbacks/list");
+		System.out.println("5/9 Done!");
+		next(driver, "https://insights.hotjar.com/sites/196624/playbacks/list");
+		System.out.println("6/9 Done!");
+		next(driver, "https://insights.hotjar.com/sites/196626/playbacks/list");
+		System.out.println("7/9 Done!");
+		next(driver, "https://insights.hotjar.com/sites/196623/playbacks/list");
+		System.out.println("8/9 Done!");
+		next(driver, "https://insights.hotjar.com/sites/319646/playbacks/list");
+		System.out.println("9/9 Done!");
+		
+		driver.quit();
+		System.out.println("All Done!");
+		
+	}
+	
+	public static void next(WebDriver driver, String url) {
+		
+		if (ExpectedConditions.elementToBeClickable(By.id("record-visitors")) != null){
+			driver.findElement(By.id("record-visitors")).click();
+			WebDriverWait wait1 = new WebDriverWait(driver, 10);
+			wait1.until(ExpectedConditions.elementToBeClickable(By.id("section-review")));
+			
+			driver.findElement(By.id("section-review")).click();
+			WebDriverWait wait4 = new WebDriverWait(driver, 10);
+			wait4.until(ExpectedConditions.elementToBeClickable(By.id("start-recording")));
+			
+			driver.findElement(By.id("start-recording")).click();
+			
+		} else if (ExpectedConditions.elementToBeClickable(By.id("stop-recording")) != null){
+			driver.findElement(By.id("stop-recording")).click();
+			WebDriverWait wait1 = new WebDriverWait(driver, 10);
+			wait1.until(ExpectedConditions.elementToBeClickable(By.id("section-review")));
+			
+			driver.findElement(By.id("section-review")).click();
+			WebDriverWait wait4 = new WebDriverWait(driver, 10);
+			wait4.until(ExpectedConditions.elementToBeClickable(By.id("start-recording")));
+			
+			driver.findElement(By.id("start-recording")).click();
+			
+		}
+		
+		driver.get(url);
+		
+//		driver.findElement(By.id("record-visitors")).click();
+//		WebDriverWait wait1 = new WebDriverWait(driver, 10);
+//		wait1.until(ExpectedConditions.elementToBeClickable(By.id("section-review")));
+//		
+//		driver.findElement(By.id("section-review")).click();
+//		WebDriverWait wait4 = new WebDriverWait(driver, 10);
+//		wait4.until(ExpectedConditions.elementToBeClickable(By.id("start-recording")));
+//		
+//		driver.findElement(By.id("start-recording")).click();
+//		
+//		driver.get(url);
+	}
+
+}
+
+
+
+Skinvtech************************************************************************
+
+package sitePackage;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class Skinvtechnologies {
+	public static void main(String[] args) {
+        
+        String url = "";
+		String offer = "";
+		List<String> offers = new ArrayList<String>();
+		
+        Map<String, List<String>> map = new HashMap<String, List<String>>();
+        
+        	List<String> skinOffers = new ArrayList<String>();
+        	skinOffers.add("aao-s-i");skinOffers.add("aao-e-i");skinOffers.add("aff-s-i");skinOffers.add("aff-e-i");skinOffers.add("lim-s-i");skinOffers.add("lim-e-i");skinOffers.add("aff-s-j");skinOffers.add("aff-e-j");skinOffers.add("lim-s-j");skinOffers.add("lim-e-j");
+        	//skinOffers.add("oas-s-i");skinOffers.add("seo-s-i");skinOffers.add("sma-s-i");skinOffers.add("aff-s-j");skinOffers.add("lim-s-j");skinOffers.add("oas-s-j");skinOffers.add("aao-e-i");skinOffers.add("aff-e-i");skinOffers.add("lim-e-i");
+        	//skinOffers.add("oas-e-i");skinOffers.add("seo-e-i");skinOffers.add("sma-e-i");skinOffers.add("aff-e-j");skinOffers.add("lim-e-j");skinOffers.add("oas-e-j");
+            
+        	//List<String> garciniaOffers = new ArrayList<String>();
+        	//garciniaOffers.add("om");garciniaOffers.add("oma");
+        
+        	//List<String> garciniaOffers = new ArrayList<String>();
+        	//garciniaOffers.add("home");
+        
+        	map.put("skinvtechnologies.com/", skinOffers);
+        	//map.put("mypowerfulgarcinia.com/", garciniaOffers);
+        	//map.put("dev2.ipartnrdev.com/home/", garciniaOffers);
+    		
+	//Firefox
+		WebDriver driver;
+		System.setProperty("webdriver.gecko.driver",  "C:\\Selenium\\WebDrivers\\geckodriver.exe");
+		driver =new FirefoxDriver();
+
+/*---------------------------------------------------------------
+*				Test Launch
+*----------------------------------------------------------------*/	
+	System.out.println("Launch prep");
+	
+	try {
+		Thread.sleep(3000);
+	} catch (InterruptedException el) {
+		el.printStackTrace();
+	}
+	
+	driver.get("https://www.google.com");
+	driver.manage().deleteAllCookies();
+	System.out.println("Ready");
+	System.out.println("-----------------------------------------");
+	System.out.println("----------------Start Testing------------");
+	System.out.println("-----------------------------------------");
+	
+	for (Map.Entry<String, List<String>> entry : map.entrySet()) {
+		url = entry.getKey();
+		offers = entry.getValue();
+	
+	
+
+/*---------------------------------------------------------------
+*				Initialize
+*----------------------------------------------------------------*/	
+	driver.get("https://" + url + "/home");
+
+/*---------------------------------------------------------------
+*				Test Loop
+*----------------------------------------------------------------*/	
+	for (int i=0; i<offers.size(); i++) {
+		offer = offers.get(i);
+		System.out.println(offer + " Started");
+		next(driver, "https://" + url + offer + "/home", offer);
+		System.out.println(offer + " passed");
+		System.out.println("-----------------------------------------");
+	}
+		
+	System.out.println("---------------All Done!-----------------");
+	System.out.println("---------------End Logging---------------");
+	System.out.println("-----------------------------------------");
+	
+	}		
+}
+
+	
+/*---------------------------------------------------------------
+*				Method
+*----------------------------------------------------------------*/	
+public static void next(WebDriver driver, String url, String offer) {
+	
+	driver.get(url);
+	
+	WebDriverWait wait4 = new WebDriverWait(driver, 10);
+	wait4.until(ExpectedConditions.urlContains("home"));
+	
+/*---------------------------------------------------------------
+*				First Form
+*----------------------------------------------------------------*/
+	driver.findElement(By.name("zip")).sendKeys("44444");
+	driver.findElement(By.name("firstName")).sendKeys(offer);
+	driver.findElement(By.name("lastName")).sendKeys("testLastName");
+	driver.findElement(By.name("address1")).sendKeys("123 Test Address");
+	driver.findElement(By.name("phone")).sendKeys("4444444444");
+	driver.findElement(By.name("email")).sendKeys("test@test.com");
+	
+	try {
+		Thread.sleep(3000);
+	} catch (InterruptedException el) {
+		el.printStackTrace();
+	}
+	
+	driver.findElement(By.name("email")).submit();
+	System.out.println("First Form Completed");
+	
+	try {
+		Thread.sleep(3000);
+	} catch (InterruptedException el) {
+		el.printStackTrace();
+	}
+	
+/*---------------------------------------------------------------
+*				Billing Form
+*----------------------------------------------------------------*/
+	driver.findElement(By.name("card")).sendKeys("1444444444444440");
+	driver.findElement(By.name("month")).sendKeys("o");
+	driver.findElement(By.name("year")).sendKeys("2222");
+	driver.findElement(By.name("cvv")).sendKeys("444");
+	
+	driver.findElement(By.name("cvv")).submit();
+	System.out.println("Billing Form Completed");
+	
+/*---------------------------------------------------------------
+*				First Offer
+*----------------------------------------------------------------*/
+	WebDriverWait wait0 = new WebDriverWait(driver, 10);
+	wait0.until(ExpectedConditions.urlContains("bonus-1"));
+	
+	WebDriverWait wait = new WebDriverWait(driver, 10);
+	wait.until(ExpectedConditions.elementToBeClickable(By.className("confirm")));
+	
+	try {
+		Thread.sleep(3000);
+	} catch (InterruptedException e1) {
+		e1.printStackTrace();
+	}
+	
+	driver.findElement(By.className("confirm")).click();
+	System.out.println("First Offer Accepted");
+	
+	try {
+		Thread.sleep(3000);
+	} catch (InterruptedException e1) {
+		e1.printStackTrace();
+	}
+	
+/*---------------------------------------------------------------
+*				Second Offer
+*----------------------------------------------------------------*/
+	WebDriverWait wait1 = new WebDriverWait(driver, 10);
+	wait1.until(ExpectedConditions.urlContains("bonus-2"));
+		
+	WebDriverWait wait2 = new WebDriverWait(driver, 10);
+	wait2.until(ExpectedConditions.elementToBeClickable(By.className("decline")));
+	
+	driver.findElement(By.className("decline")).click();
+	System.out.println("Second Offer Declined");
+	
+	driver.manage().deleteAllCookies();
+	
+	driver.get(url);
+
+	}
+}
